@@ -3,7 +3,8 @@
 import React, { Component } from "react";
 import {
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createAppContainer
 } from "react-navigation";
 import HomeScreen from "./HomeScreen";
 import DasModalScreen from "./DasModalScreen";
@@ -35,9 +36,11 @@ const RootStack = createStackNavigator(
   }
 );
 
+const RootStackContainer = createAppContainer(RootStack);
+
 class App extends Component {
   render() {
-    return <RootStack />;
+    return <RootStackContainer />;
   }
 }
 
